@@ -61,6 +61,16 @@ class TeemIpDiscoveryIPApplicationCollector extends Collector
 		if ($sAttCode == 'services_list') return true;
 		if ($sAttCode == 'tickets_list') return true;
 
+		// ignore fields from other extensions
+		if ($sAttCode == 'backupdescription') return true;
+		if ($sAttCode == 'backupmethod') return true;
+		if ($sAttCode == 'monitoringip_id') return true;
+		if ($sAttCode == 'monitoringparameter') return true;
+		if ($sAttCode == 'monitoringprobe_id') return true;
+		if ($sAttCode == 'monitoringstatus') return true;
+		if ($sAttCode == 'patchmethod_id') return true;
+		if ($sAttCode == 'system_landscape') return true;
+
 		return parent::AttributeIsOptional($sAttCode);
 	}
 
