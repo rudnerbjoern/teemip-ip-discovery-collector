@@ -61,15 +61,30 @@ class TeemIpDiscoveryIPApplicationCollector extends Collector
 		if ($sAttCode == 'services_list') return true;
 		if ($sAttCode == 'tickets_list') return true;
 
-		// ignore fields from other extensions
-		if ($sAttCode == 'backupdescription') return true;
-		if ($sAttCode == 'backupmethod') return true;
-		if ($sAttCode == 'monitoringip_id') return true;
-		if ($sAttCode == 'monitoringparameter') return true;
-		if ($sAttCode == 'monitoringprobe_id') return true;
-		if ($sAttCode == 'monitoringstatus') return true;
-		if ($sAttCode == 'patchmethod_id') return true;
+		// System Landscape is optional
 		if ($sAttCode == 'system_landscape') return true;
+
+		// Cost Center is optional
+		if ($sAttCode == 'costcenter_id') return true;
+
+		//  Backup Management is optional
+		if ($sAttCode == 'backupmethod') return true;
+		if ($sAttCode == 'backupdescription') return true;
+
+			// Patch Management is optional
+		if ($sAttCode == 'patchmethod_id') return true;
+		if ($sAttCode == 'patchgroup_id') return true;
+		if ($sAttCode == 'patchreboot_id') return true;
+
+		// Risk Management is optional
+		if ($sAttCode == 'rm_confidentiality') return true;
+		if ($sAttCode == 'rm_integrity') return true;
+		if ($sAttCode == 'rm_availability') return true;
+		if ($sAttCode == 'rm_authenticity') return true;
+		if ($sAttCode == 'rm_nonrepudiation') return true;
+		if ($sAttCode == 'bcm_rto') return true;
+		if ($sAttCode == 'bcm_rpo') return true;
+		if ($sAttCode == 'bcm_mtd') return true;
 
 		return parent::AttributeIsOptional($sAttCode);
 	}
